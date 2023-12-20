@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>LLM Eval portal</title>
+   <script>
+     function checkFields() {
+         var pipelineCode = document.getElementById('pipeline_code').value;
+         var inputs = document.getElementById('inputs').value;
+         var metrics = document.getElementById('metrics').value;
+
+         if (pipelineCode && inputs && metrics) {
+            document.getElementById('submit-btn').disabled = false;
+         } else {
+            document.getElementById('submit-btn').disabled = true;
+         }
+      }
+
+    function submitForm() {
+       document.getElementById('submit-btn').innerHTML = 'Submitting...';
+       document.getElementById('submit-btn').disabled = true;
+       document.getElementById('my-form').submit();
+    }
+
+    var inputs = document.querySelectorAll('.form-control');
+        inputs.forEach(function(input) {
+            input.addEventListener('keyup', checkFields);
+        });
+ </script>
+</head>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+<body>
+    <form method="POST" onsubmit="submitForm()" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <label for="pipeline_code">Pipeline Code:</label>
+        {{ form.pipeline_code(class="form-control", placeholder="def pipeline(config, input):
+        prompt = f&quot;You are a helpful assistant. Write an email on the topic of {input['topic']}&quot;.
+        response = openai.ChatCompletion.create(
+            model=&quot;gpt-3.5-turbo&quot;,
+            messages=[{{'role': 'user', 'content': prompt}}]
+        )
+        return response.choices[0].message['content']") }}
+ 
+        <label for="metrics_code">Metrics Code:</label>
+        {{ form.metrics_code(class="form-control", placeholder="def email_quality(output):
+        prompt = f&quot;You are a helpful assistant. Give the following email a 1-5 score: {output}&quot;
+        response = openai.ChatCompletion.create(
+            model=&quot;gpt-4&quot;,
+            messages=[{'role': 'user', 'content': prompt}]
+        )
+        return response.choices[0].message['content']
+         ") }}
+
+
+         <label for="input_file">Input File (JSON):</label>
+        <div class="input-group mb-3">
+            <div class="custom-file">
+                {{ form.input_file(class="custom-file-input", placeholder="[
+                {
+                    &quot;topic&quot;: &quot;enterprise SaaS pitch&quot;,
+                    &quot;input_metadata&quot;: {
+                        &quot;importance&quot;: 0.9
+                    }
+                },
+                {
+                    &quot;topic&quot;: &quot;marketing campaign&quot;,
+                    &quot;input_metadata&quot;: {
+                        &quot;importance&quot;: 0.5
+                    }
+                }
+                ]") }}
+            </div>
+        </div>
+ 
+        <br>
+        {{ form.submit(class="btn-submit", id="submit-btn") }}
+    </form>
+</body>
+</html>

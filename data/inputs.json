@@ -1,0 +1,14 @@
+[
+    {
+        "topic": "enterprise SaaS pitch",
+        "input_metadata": {
+            "importance": 0.9
+        }
+    },
+    {
+        "topic": "marketing campaign",
+        "input_metadata": {
+            "importance": 0.5
+        }
+    }
+]
