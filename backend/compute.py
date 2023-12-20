@@ -6,8 +6,8 @@ import inspect
 import multiprocessing as mp
 
 
-openai.organization = "org-PDgZdabgwEQG4CKvJHhH4ALa"
-openai.api_key = "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"  
+openai.organization = "<YOUR ORG ID>"
+openai.api_key = "<YOUR OPEN AI API KEY>"  
 model_name = "gpt-3.5-turbo"
 
 app = Celery('tasks', broker='pyamqp://guest@localhost//')
