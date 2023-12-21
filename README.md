@@ -51,7 +51,7 @@ And navigating to the localhost link in the terminal on any browser of your choi
 # Sample Data
 
 ## Function Data
-`def pipeline(config, input):
+`def pipeline(config, input): \n
         prompt =
         f"You are a helpful assistant. Write an email on the topic of {input['topic']}"
         response = openai.ChatCompletion.create(
