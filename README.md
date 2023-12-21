@@ -4,19 +4,20 @@ Honey Hive AI LLM Eval application. Built on Flask, python and OpenAI's GPT-3.5 
 # Structure
 
 
---Backend
+-- Backend
     | -- compute.py
---Data
+-- Data
     | -- input.py
     | -- metrics.py
     | -- pipeline.py
---Static
+-- Static
     | -- index.css
     | -- report.css
---Templates
+-- Templates
     | -- index.html
     | -- report.html
---routes.py
+-- routes.py
+
 
 
 # App screenshots
