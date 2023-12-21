@@ -3,24 +3,37 @@ Honey Hive AI LLM Eval application. Built on Flask, python and OpenAI's GPT-3.5 
 
 # Structure
 
-
--- Backend
-    | -- compute.py
--- Data
-    | -- input.py
-    | -- metrics.py
-    | -- pipeline.py
--- Static
-    | -- index.css
-    | -- report.css
--- Templates
-    | -- index.html
-    | -- report.html
--- routes.py
+```
+.
+├── backend
+│   ├── classify.py
+│   ├── compute.py
+│   ├── compute_mlflow.py
+│   ├── compute_ray.py
+│   ├── report.py
+│   └── secret_key.py
+├── data
+│   ├── input.py
+│   ├── inputs.json
+│   ├── metrics.py
+│   └── pipeline.py
+├── routes.py
+├── static
+│   └── css
+│       ├── index.css
+│       └── report.css
+└── templates
+    ├── index.html
+    └── report.html
+```
 
 
 
 # App screenshots
+
+![App screenshot](https://example.com/image.jpg)
+![App screenshot](https://example.com/image.jpg)
+
 
 
 # Additional files
@@ -48,6 +61,7 @@ And navigating to the localhost link in the terminal on any browser of your choi
 
 # Workflow
 
+![App workflow](https://example.com/image.jpg)
 
 # Sample Data
 
