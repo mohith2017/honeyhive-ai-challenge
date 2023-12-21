@@ -51,18 +51,21 @@ And navigating to the localhost link in the terminal on any browser of your choi
 # Sample Data
 
 ## Function Data
-`def pipeline(config, input): \n
+```
+def pipeline(config, input): \n
         prompt =
         f"You are a helpful assistant. Write an email on the topic of {input['topic']}"
         response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[{"role": "user", "content": prompt}]
         )
-        return response.choices[0].message['content']`
+        return response.choices[0].message['content']
+```
 
 ## Input Data
 
-`[
+```
+[
         {
             "topic": "enterprise SaaS pitch",
             "input_metadata": {
@@ -75,14 +78,17 @@ And navigating to the localhost link in the terminal on any browser of your choi
                 "importance": 0.5
             }
         }
-]`
+]
+```
 
 ## Metrics Data
 
-`def email_quality(output):
+```
+def email_quality(output):
         prompt = f"You are a helpful assistant. Give the following email a 1-5 score: {output}"
         response = openai.ChatCompletion.create(
             model="gpt-4", 
             messages=[{"role": "user", "content": prompt}]
         )
-        return response.choices[0].message['content']`
+        return response.choices[0].message['content']
+```
