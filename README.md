@@ -31,8 +31,8 @@ Honey Hive AI LLM Eval application. Built on Flask, python and OpenAI's GPT-3.5 
 
 # App screenshots
 
-![App screenshot](https://i.ibb.co/GTVXHV2/Report-challenge.png)
-![App screenshot]([https://i.ibb.co/rw57YMc/Frontend-UI.png)
+![App screenshot](https://i.ibb.co/GTVXHV2/Report-challenge.png) <br>
+![App screenshot](https://i.ibb.co/rw57YMc/Frontend-UI.png)
 
 
 
