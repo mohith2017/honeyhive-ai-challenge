@@ -1,5 +1,5 @@
 # About
-Honey Hive AI LLM Eval application. Built on Flask, python and OpenAI's GPT-3.5 LLM API with custom evaluation and metrics for LLM Eval.
+Open Source AI LLM Eval application. Built on Flask, python and OpenAI's GPT-3.5 LLM API with custom evaluation and metrics for LLM Eval.
 
 # Structure
 
