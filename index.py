@@ -14,8 +14,8 @@ app = Flask(__name__)
 
 
 # Set the secret key
-app.config['SECRET_KEY'] = b'\x99=\x19(\xfe\xbd\xe0]\xfe7\xe8\xc3\xe6\xd4\xef\xeer\x85\xaf1\xbf9\xce:'
-csrf = CSRFProtect(app)
+# app.config['SECRET_KEY'] = b'\x99=\x19(\xfe\xbd\xe0]\xfe7\xe8\xc3\xe6\xd4\xef\xeer\x85\xaf1\xbf9\xce:'
+# csrf = CSRFProtect(app)
 
 class MetricsForm(FlaskForm):
    pipeline_code = TextAreaField('Pipeline Code')
