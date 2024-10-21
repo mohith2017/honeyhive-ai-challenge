@@ -23,8 +23,11 @@ class MetricsForm(FlaskForm):
    input_file = FileField('Input File (JSON)')
    submit = SubmitField('Submit')
 
+@app.route('/')
+def hello():
+    return "Hello from Flask on Vercel!"
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/landing', methods=['GET', 'POST'])
 def index():
    form = MetricsForm()
    if form.validate_on_submit():
@@ -54,7 +57,4 @@ def report():
    report = generate_report(output_metadata)
 
    return render_template('report.html', report=report)
-
-if __name__ == '__main__':
-    app.run()
 
